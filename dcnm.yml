@@ -1,0 +1,10 @@
+    ansible_connection: ansible.netcommon.httpapi
+    ansible_network_os: cisco.dcnm.dcnm
+    ansible_user: "anshul"
+    ansible_password: "admincisco!23"
+    ansible_domain: local
+    ansible_python_interpreter: python3
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_login_domain: local
+    ansible_command_timeout: 120
