@@ -22,19 +22,27 @@
           - name: template_101
             description: "Template_101"
             tags: "internal policy 101"
-            content: |
-              telemetry
-                certificate /bootflash/telegraf.crt telegraf
-                destination-profile
-                  use-vrf management
-                destination-group 101
-                  ip address 10.195.225.176 port 57101 protocol gRPC encoding GPB
-                sensor-group 101
-                  data-source DME
-                  path sys/ch depth unbounded                
-                subscription 101
-                  dst-grp 101
-                  snsr-grp 101 sample-interval 10101
+            content: "{{ lookup('template', 'template_101.j2') }}"
+          - name: template_102
+            description: "Template_102"
+            tags: "internal policy 102"
+            content: "{{ lookup('template', 'template_102.j2') }}"
+          # - name: template_101
+          #   description: "Template_101"
+          #   tags: "internal policy 101"
+          #   content: |
+          #     telemetry
+          #       certificate /bootflash/telegraf.crt telegraf
+          #       destination-profile
+          #         use-vrf management
+          #       destination-group 101
+          #         ip address 10.195.225.176 port 57101 protocol gRPC encoding GPB
+          #       sensor-group 101
+          #         data-source DME
+          #         path sys/ch depth unbounded                
+          #       subscription 101
+          #         dst-grp 101
+          #         snsr-grp 101 sample-interval 10101
           # - name: template_102
           #   description: "Template_102"
           #   tags: "internal policy 102"
