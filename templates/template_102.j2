@@ -1,0 +1,12 @@
+telemetry
+  certificate /bootflash/telegraf.crt telegraf
+  destination-profile
+    use-vrf management
+  destination-group 1
+    ip address 10.195.225.102 port 57102 protocol gRPC encoding GPB
+  sensor-group 102
+    data-source DME
+    path sys/ch depth unbounded
+  subscription 102
+    dst-grp 102
+    snsr-grp 102 sample-interval 10102
